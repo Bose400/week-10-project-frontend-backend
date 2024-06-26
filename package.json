@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "admin": "npm run dev --prefix admin",
+    "admin-setup": "cd admin && yarn --exact",
+    "backend": "npm start --prefix backend",
+    "backend-setup": "cd backend && npm install",
+    "frontend": "npm start --prefix frontend",
+    "frontend-setup": "cd frontend && yarn --exact",
+    "dev": "concurrently --kill-others-on-fail \"yarn run admin\" \"yarn run backend\" \"yarn run frontend\"",
+    "setup": "yarn admin-setup && yarn backend-setup && yarn frontend-setup"
+  }
+}
